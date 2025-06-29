@@ -1,9 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the app
-    updateFavorites();
-    searchInput.focus();
-});
-const API_KEY = '5dde9039';
+// Movie Search and Favorites App
+
+ const API_KEY = '5dde9039';
 const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 const searchInput = document.getElementById('searchInput');
