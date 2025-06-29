@@ -61,5 +61,25 @@ async function fetchMovieDetails(movies) {
         )
     );
 }
+//  favourites
+function isFavorite(imdbID) {
+    return favorites.some(movie => movie.imdbID === imdbID);
+}
+
+function saveFavorites() {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+}
+
+function removeFavorite(imdbID) {
+    favorites = favorites.filter(movie => movie.imdbID !== imdbID);
+    saveFavorites();
+}
+
+async function addFavorite(imdbID) {
+    const response = await fetch(`${API_URL}i=${imdbID}`);
+    const movie = await response.json();
+    favorites.push(movie);
+    saveFavorites();
+}
 
     
