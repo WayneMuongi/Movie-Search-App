@@ -90,4 +90,33 @@ function updateFavorites() {
     }
 }
 
+function renderMovies(movies, container, isFavoriteSection) {
+    container.innerHTML = '';
+    movies.forEach(movie => {
+        const movieCard = document.createElement('div');
+        movieCard.classList.add('movie-card');
+        movieCard.innerHTML = `
+            <img src="${movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/150'}" alt="${movie.Title}">
+            <h3>${movie.Title}</h3>
+            <p>Year: ${movie.Year}</p>
+            <p>Rating: ${movie.imdbRating || 'N/A'}</p>
+            <p>${movie.Plot || 'No description available.'}</p>
+            <button class="favorite-btn${isFavorite(movie.imdbID) ? ' remove' : ''}" data-imdbid="${movie.imdbID}">
+                ${isFavorite(movie.imdbID) ? '★' : '☆'}
+            </button>
+        `;
+        container.appendChild(movieCard);
+    });
+
+    container.querySelectorAll('.favorite-btn').forEach(btn => {
+        btn.addEventListener('click', handleFavoriteClick);
+    });
+}
+
+
+updateFavorites();
+// Initial fetch to populate favorites section
+
+
+
     
