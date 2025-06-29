@@ -35,6 +35,21 @@ async function handleFavoriteClick(e) {
     }
     updateFavorites();
 }
-
+async function searchMovies(query) {
+    moviesGrid.innerHTML = '<p>Loading movies...</p>';
+    try {
+        const response = await fetch(`${API_URL}s=${query}`);
+        const data = await response.json();
+        if (data.Response === 'True') {
+            const detailedMovies = await fetchMovieDetails(data.Search);
+            renderMovies(detailedMovies, moviesGrid, false);
+        } else {
+            moviesGrid.innerHTML = '<p>No movies found.</p>';
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        moviesGrid.innerHTML = '<p>Error fetching movies. Please try again later.</p>';
+    }
+}
 
     
