@@ -50,4 +50,4 @@ This app uses the [OMDb API](http://www.omdbapi.com/) to fetch movie data. You c
 
 ## License
 
-This project is under Moringa School and is for learning purposes. All credits go towards the faculty of software engineering at Moringa School.
+This project is under the instruction of Moringa School and is for learning purposes. All credits go towards the faculty of software engineering at Moringa School.
