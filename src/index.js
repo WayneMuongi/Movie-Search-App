@@ -116,6 +116,13 @@ function renderMovies(movies, container, isFavoriteSection) {
 
 updateFavorites();
 // Initial fetch to populate favorites section
+if (favorites.length > 0) {
+    renderMovies(favorites, favoritesGrid, true);
+}
+searchButton.addEventListener('submit', handleSearch);{
+    e.preventDefault();
+    handleSearch();
+};
 
 
 
