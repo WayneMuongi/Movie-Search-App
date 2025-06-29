@@ -81,5 +81,13 @@ async function addFavorite(imdbID) {
     favorites.push(movie);
     saveFavorites();
 }
+function updateFavorites() {
+    renderMovies(favorites, favoritesGrid, true);
+    // Also update the main grid to reflect favorite status
+    if (moviesGrid.children.length) {
+        // Optionally,update favorite buttons in moviesGrid
+        // For simplicity, you can re-run the last search if you store the query
+    }
+}
 
     
