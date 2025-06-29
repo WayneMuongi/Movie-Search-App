@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Search App</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <img src="./jeet-dhanoa-tGHkC5ntUGc-unsplash.jpg" alt="iconic image" style="width: 100px; height: 4cm;">
-    <h1>Movie Search App</h1><br><br>
-    <div class="search-container">
-        <input type="text"  id="searchInput" placeholder="Search for a movie..."autocomplete="off" required>
-        <button id="searchButton">Search</button>
-    </div><br><br>
+    <header>
+        <h1>Movie Search App</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for a movie..." autocomplete="off">
+            <button id="searchButton">Search</button>
+        </div>
+    </header>
     <main>
         <div id="moviesGrid"></div>
-        <div id="favoritesSections">
-            <h2>MY FAVORITES</h2>
+        <div id="favoritesSection">
+            <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">My Favorites</h2>
             <div id="favoritesGrid"></div>
         </div>
     </main>
-<script src="./src/index.js"></script>
+    <script src="./src/index.js"></script>
 </body>
 </html>
