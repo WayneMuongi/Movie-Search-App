@@ -35,6 +35,7 @@ async function handleFavoriteClick(e) {
     }
     updateFavorites();
 }
+//movie searching
 async function searchMovies(query) {
     moviesGrid.innerHTML = '<p>Loading movies...</p>';
     try {
@@ -50,6 +51,15 @@ async function searchMovies(query) {
         console.error('Error fetching data:', error);
         moviesGrid.innerHTML = '<p>Error fetching movies. Please try again later.</p>';
     }
+}
+async function fetchMovieDetails(movies) {
+    // Fetch detailed info for each movie
+    return Promise.all(
+        movies.map(movie =>
+            fetch(`${API_URL}i=${movie.imdbID}`)
+                .then(res => res.json())
+        )
+    );
 }
 
     
